@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { DM_Serif_Display, Work_Sans } from "next/font/google";
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
 import { site } from "@/lib/site";
 import "./globals.css";
 
