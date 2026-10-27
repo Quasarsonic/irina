@@ -5,29 +5,55 @@ export function SiteFooter() {
   const year = 2026;
 
   return (
-    <footer className="border-t border-border/60 bg-muted/30">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 sm:px-6 md:flex-row md:items-center md:justify-between">
+    <footer className="border-t border-border/60 bg-foreground text-background">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3">
         <div>
-          <p className="font-heading text-lg font-semibold">{site.name}</p>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Lezioni di musica con cura, passione e metodo.
+          <p className="font-heading text-2xl">{site.shortName}</p>
+          <p className="mt-2 text-sm text-background/75">
+            Percorsi musicali per bambini, ragazzi e adulti. Lezioni individuali con cura,
+            passione e metodo.
           </p>
         </div>
-        <div className="flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:items-center sm:gap-6">
-          <Link
-            href={site.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-foreground"
-          >
-            {site.instagramHandle}
-          </Link>
-          <a href={`mailto:${site.email}`} className="hover:text-foreground">
-            {site.email}
-          </a>
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-widest text-background/60">
+            Link rapidi
+          </p>
+          <ul className="mt-3 space-y-2 text-sm text-background/85">
+            <li>
+              <Link href="#percorsi" className="hover:text-white">Percorsi</Link>
+            </li>
+            <li>
+              <Link href="#chi-sono" className="hover:text-white">Chi sono</Link>
+            </li>
+            <li>
+              <Link href="#contatti" className="hover:text-white">Contatti</Link>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-widest text-background/60">
+            Contatti
+          </p>
+          <ul className="mt-3 space-y-2 text-sm text-background/85">
+            <li>
+              <a href={`mailto:${site.email}`} className="hover:text-white">
+                {site.email}
+              </a>
+            </li>
+            <li>
+              <Link
+                href={site.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white"
+              >
+                {site.instagramHandle}
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
-      <div className="border-t border-border/40 py-4 text-center text-xs text-muted-foreground">
+      <div className="border-t border-background/15 py-4 text-center text-xs text-background/60">
         © {year} {site.name}. Tutti i diritti riservati.
       </div>
     </footer>

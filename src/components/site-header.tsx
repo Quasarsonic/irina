@@ -5,29 +5,32 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { site, navItems } from "@/lib/site";
+import { navItems, site } from "@/lib/site";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
+    <header className="sticky top-0 z-50 border-b border-border/50 bg-background/90 backdrop-blur-md">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link href="/" className="group flex flex-col leading-tight">
-          <span className="font-heading text-lg font-semibold tracking-tight text-foreground sm:text-xl">
-            Irina
+          <span className="font-heading text-xl tracking-tight text-foreground">
+            {site.shortName}
           </span>
-          <span className="text-xs text-muted-foreground transition-colors group-hover:text-foreground">
-            Insegnante di musica
+          <span className="text-[0.65rem] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+            {site.tagline}
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Principale">
+        <nav
+          className="hidden items-center gap-6 md:flex"
+          aria-label="Principale"
+        >
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-primary"
             >
               {item.label}
             </Link>
@@ -39,12 +42,18 @@ export function SiteHeader() {
             href={site.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className={cn(buttonVariants({ variant: "outline", size: "sm" }))}
+            className="text-xs font-semibold uppercase tracking-wide text-muted-foreground hover:text-primary"
           >
             Instagram
           </Link>
-          <Link href="#contatti" className={cn(buttonVariants({ size: "sm" }))}>
-            Prenota una lezione
+          <Link
+            href="#contatti"
+            className={cn(
+              buttonVariants({ size: "sm" }),
+              "bg-accent text-accent-foreground hover:bg-accent/90",
+            )}
+          >
+            Iscrizioni
           </Link>
         </div>
 
@@ -77,9 +86,12 @@ export function SiteHeader() {
             <Link
               href="#contatti"
               onClick={() => setOpen(false)}
-              className={cn(buttonVariants(), "mt-2 w-full")}
+              className={cn(
+                buttonVariants(),
+                "mt-2 w-full bg-accent text-accent-foreground hover:bg-accent/90",
+              )}
             >
-              Prenota una lezione
+              Iscrizioni
             </Link>
           </nav>
         </div>
