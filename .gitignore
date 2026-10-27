@@ -21,6 +21,9 @@
 /build
 
 # misc
+.firecrawl/
+*.png
+AGENTS.md
 .DS_Store
 *.pem
 
