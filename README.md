@@ -1,6 +1,6 @@
 # Irina — sito per insegnante di musica
 
-Sito Next.js in italiano per **Irina Tchermianina**, insegnante di musica. Presenta servizi, metodo, contatti e collegamento al profilo [Instagram @tchermianinairina](https://www.instagram.com/tchermianinairina/).
+Sito Next.js in italiano per **Irina Tchermianina**, insegnante di pianoforte a Robasacco (TI). Contenuti allineati all’[annuncio su tutti.ch](https://www.tutti.ch/it/vi/ticino/musica/strumenti/lezioni-di-pianoforte/82716917) (da 50 CHF, prima lezione gratuita).
 
 ## Sviluppo locale
 

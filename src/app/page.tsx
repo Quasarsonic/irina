@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { SectionHeading } from "@/components/section-heading";
 import { buttonVariants } from "@/components/ui/button";
@@ -13,10 +14,10 @@ import {
   hero,
   methodSteps,
   offerings,
+  philosophyQuote,
   pillars,
   site,
   stats,
-  testimonials,
 } from "@/lib/site";
 
 export default function HomePage() {
@@ -40,6 +41,14 @@ export default function HomePage() {
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
                 {hero.subtitle}
               </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <span className="rounded-full bg-accent px-4 py-1.5 text-sm font-semibold text-accent-foreground">
+                  {site.trialLesson}
+                </span>
+                <span className="rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
+                  Da {site.priceFrom}
+                </span>
+              </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <Link
                   href="#contatti"
@@ -48,29 +57,32 @@ export default function HomePage() {
                     "bg-accent text-accent-foreground hover:bg-accent/90",
                   )}
                 >
-                  Prima lezione di prova
+                  Prenota la lezione
                 </Link>
                 <Link
-                  href={site.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#offerta"
                   className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
                 >
-                  {site.instagramHandle}
+                  Vedi l&apos;offerta
                 </Link>
               </div>
             </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-primary/15 bg-primary/10 shadow-xl lg:aspect-auto lg:min-h-[22rem]">
-              <div
-                className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,oklch(0.75_0.08_175),transparent_55%),radial-gradient(circle_at_80%_80%,oklch(0.72_0.12_15),transparent_50%)]"
-                aria-hidden
+            <div className="relative min-h-[22rem] overflow-hidden rounded-2xl border border-primary/15 shadow-xl">
+              <Image
+                src="/irina-piano-1.jpg"
+                alt="Irina Tchermianina, insegnante di pianoforte"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
               />
-              <div className="relative flex h-full flex-col justify-end p-8 text-white">
-                <p className="text-sm font-medium uppercase tracking-widest text-white/80">
-                  {site.name}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+              <div className="absolute bottom-0 p-6 text-white sm:p-8">
+                <p className="text-sm font-medium uppercase tracking-widest text-white/85">
+                  {site.location}
                 </p>
                 <p className="mt-2 max-w-sm font-heading text-2xl leading-snug">
-                  Un luogo dove la passione per la musica diventa esperienza e crescita.
+                  Provate a realizzare i vostri sogni musicali.
                 </p>
               </div>
             </div>
@@ -81,8 +93,8 @@ export default function HomePage() {
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <SectionHeading
               eyebrow="Perché studiare con me"
-              title="Una scuola di musica intima, pensata per te"
-              description="Ispirata all’accoglienza e alla chiarezza di una scuola di musica professionale, con l’attenzione che solo le lezioni individuali possono offrire."
+              title="Insegnamento solido, adattato a voi"
+              description="Formazione in Russia, Italia e Svizzera, con un metodo personalizzato per ogni età e livello."
               align="center"
             />
             <div className="mt-12 grid gap-6 lg:grid-cols-3">
@@ -112,12 +124,49 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section
+          id="offerta"
+          className="scroll-mt-24 border-b border-border/60 bg-muted/25 py-16 sm:py-20"
+        >
+          <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+            <SectionHeading
+              eyebrow="Offerta"
+              title="Lezioni di pianoforte nel Canton Ticino"
+              description="Come da annuncio su tutti.ch: lezioni per tutte le età e livelli, con la possibilità di scegliere lingua e modalità."
+            />
+            <Card className="border-primary/20 shadow-md">
+              <CardHeader>
+                <CardTitle className="font-heading text-3xl font-normal text-primary">
+                  Da {site.priceFrom}
+                </CardTitle>
+                <p className="text-sm text-muted-foreground">{site.priceNote}</p>
+              </CardHeader>
+              <CardContent className="space-y-4 text-sm">
+                <ul className="space-y-2 text-foreground">
+                  <li>✓ {site.trialLesson}</li>
+                  <li>✓ Lezioni per bambini (approccio ludico) e adulti</li>
+                  <li>✓ Lingue: {site.languages.join(", ")}</li>
+                  <li>✓ Modalità: {site.lessonModes.join(" · ")}</li>
+                </ul>
+                <Link
+                  href={site.tuttiListing}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block text-sm font-semibold text-primary hover:underline"
+                >
+                  Vedi l&apos;annuncio su tutti.ch →
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
         <section id="percorsi" className="scroll-mt-24 py-16 sm:py-20">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <SectionHeading
-              eyebrow="Percorsi per ogni età"
-              title="Corsi di pianoforte e musica per ogni livello"
-              description="Come in una scuola che accompagna dall’infanzia all’età adulta, con obiettivi chiari e un clima che motiva."
+              eyebrow="Percorsi"
+              title="Per ogni età, livello e stile di vita"
+              description="Dalle lezioni ludiche per i più piccoli all’approccio dedicato per chi inizia da adulto."
             />
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {ageGroups.map((group) => (
@@ -165,15 +214,12 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section
-          id="metodo"
-          className="scroll-mt-24 bg-background py-16 sm:py-20"
-        >
+        <section id="metodo" className="scroll-mt-24 bg-background py-16 sm:py-20">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <SectionHeading
               eyebrow="Metodo e approccio"
-              title="Imparare musica significa crescere"
-              description="Uniamo tecnica, ascolto e pratica. Lo studio è serio, ma anche stimolante: ogni allievo ha un percorso personalizzato."
+              title="Desiderio, tempo e musica"
+              description="Imparare a suonare non dipende dal talento naturale, ma dal desiderio e dal tempo che vi dedicate."
             />
             <ol className="mt-12 grid gap-6 md:grid-cols-2">
               {methodSteps.map((step) => (
@@ -193,7 +239,16 @@ export default function HomePage() {
         </section>
 
         <section id="chi-sono" className="scroll-mt-24 border-t border-border/60 py-16 sm:py-20">
-          <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-start">
+          <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-center">
+            <div className="relative min-h-[20rem] overflow-hidden rounded-2xl border border-border/70 shadow-md">
+              <Image
+                src="/irina-piano-2.jpg"
+                alt="Lezioni di pianoforte con Irina"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
             <div>
               <SectionHeading eyebrow="Chi sono" title={site.name} />
               <div className="mt-6 space-y-4 text-muted-foreground">
@@ -203,22 +258,11 @@ export default function HomePage() {
                   </p>
                 ))}
               </div>
-              <p className="mt-6 font-heading text-xl text-primary">
-                La musica cresce con le persone. Questa è la mia missione.
-              </p>
-            </div>
-            <div className="space-y-6">
-              {testimonials.map((item) => (
-                <blockquote
-                  key={item.author}
-                  className="rounded-2xl border border-border/70 bg-muted/40 p-6"
-                >
-                  <p className="font-heading text-lg leading-snug text-foreground">
-                    &ldquo;{item.quote}&rdquo;
-                  </p>
-                  <footer className="mt-4 text-sm text-muted-foreground">— {item.author}</footer>
-                </blockquote>
-              ))}
+              <blockquote className="mt-8 rounded-2xl border border-primary/20 bg-primary/5 p-6">
+                <p className="font-heading text-xl leading-snug text-foreground">
+                  &ldquo;{philosophyQuote}&rdquo;
+                </p>
+              </blockquote>
             </div>
           </div>
         </section>
@@ -227,9 +271,11 @@ export default function HomePage() {
           <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 sm:px-6 md:flex-row md:items-center">
             <div>
               <p className="text-sm font-semibold uppercase tracking-widest text-white/85">
-                Sei pronto a suonare?
+                {site.trialLesson}
               </p>
-              <h2 className="mt-2 font-heading text-3xl sm:text-4xl">Dalla prima nota in poi.</h2>
+              <h2 className="mt-2 font-heading text-3xl sm:text-4xl">
+                Contattatemi per prenotare la vostra lezione.
+              </h2>
             </div>
             <Link
               href="#contatti"
@@ -238,7 +284,7 @@ export default function HomePage() {
                 "bg-white text-accent hover:bg-white/90",
               )}
             >
-              Richiedi informazioni
+              Scrivimi
             </Link>
           </div>
         </section>
@@ -251,8 +297,8 @@ export default function HomePage() {
             <div>
               <SectionHeading
                 eyebrow="Contatto"
-                title="Contatti e iscrizioni"
-                description="Scrivimi per una lezione di prova o per chiedere informazioni su orari, tariffe e modalità online."
+                title="Informazioni e prenotazioni"
+                description="Scrivetemi per maggiori informazioni o per fissare la vostra lezione di prova gratuita."
               />
               <Separator className="my-8" />
               <dl className="space-y-4 text-sm">
@@ -268,8 +314,8 @@ export default function HomePage() {
                   </dd>
                 </div>
                 <div>
-                  <dt className="font-medium text-foreground">Telefono</dt>
-                  <dd className="text-muted-foreground">{site.phone}</dd>
+                  <dt className="font-medium text-foreground">Zona lezioni</dt>
+                  <dd className="text-muted-foreground">{site.location}</dd>
                 </div>
                 <div>
                   <dt className="font-medium text-foreground">Instagram</dt>
@@ -281,6 +327,19 @@ export default function HomePage() {
                       className="text-muted-foreground hover:text-foreground"
                     >
                       {site.instagramHandle}
+                    </Link>
+                  </dd>
+                </div>
+                <div>
+                  <dt className="font-medium text-foreground">Facebook</dt>
+                  <dd>
+                    <Link
+                      href={site.facebook}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-foreground"
+                    >
+                      {site.facebookHandle}
                     </Link>
                   </dd>
                 </div>

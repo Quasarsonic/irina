@@ -10,8 +10,7 @@ export function SiteFooter() {
         <div>
           <p className="font-heading text-2xl">{site.shortName}</p>
           <p className="mt-2 text-sm text-background/75">
-            Percorsi musicali per bambini, ragazzi e adulti. Lezioni individuali con cura,
-            passione e metodo.
+            Lezioni di pianoforte a {site.location}. {site.trialLesson}, da {site.priceFrom}.
           </p>
         </div>
         <div>
@@ -20,7 +19,7 @@ export function SiteFooter() {
           </p>
           <ul className="mt-3 space-y-2 text-sm text-background/85">
             <li>
-              <Link href="#percorsi" className="hover:text-white">Percorsi</Link>
+              <Link href="#offerta" className="hover:text-white">Offerta</Link>
             </li>
             <li>
               <Link href="#chi-sono" className="hover:text-white">Chi sono</Link>
@@ -50,11 +49,21 @@ export function SiteFooter() {
                 {site.instagramHandle}
               </Link>
             </li>
+            <li>
+              <Link
+                href={site.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white"
+              >
+                Facebook
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
       <div className="border-t border-background/15 py-4 text-center text-xs text-background/60">
-        © {year} {site.name}. Tutti i diritti riservati.
+        © {year} {site.name}. {site.region}.
       </div>
     </footer>
   );
