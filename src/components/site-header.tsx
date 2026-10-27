@@ -1,0 +1,89 @@
+"use client";
+
+import Link from "next/link";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { site, navItems } from "@/lib/site";
+
+export function SiteHeader() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
+        <Link href="/" className="group flex flex-col leading-tight">
+          <span className="font-heading text-lg font-semibold tracking-tight text-foreground sm:text-xl">
+            Irina
+          </span>
+          <span className="text-xs text-muted-foreground transition-colors group-hover:text-foreground">
+            Insegnante di musica
+          </span>
+        </Link>
+
+        <nav className="hidden items-center gap-8 md:flex" aria-label="Principale">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="hidden items-center gap-3 md:flex">
+          <Link
+            href={site.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(buttonVariants({ variant: "outline", size: "sm" }))}
+          >
+            Instagram
+          </Link>
+          <Link href="#contatti" className={cn(buttonVariants({ size: "sm" }))}>
+            Prenota una lezione
+          </Link>
+        </div>
+
+        <Button
+          type="button"
+          variant="ghost"
+          size="icon"
+          className="md:hidden"
+          aria-expanded={open}
+          aria-label={open ? "Chiudi menu" : "Apri menu"}
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? <X className="size-5" /> : <Menu className="size-5" />}
+        </Button>
+      </div>
+
+      {open ? (
+        <div className="border-t border-border/60 bg-background px-4 py-4 md:hidden">
+          <nav className="flex flex-col gap-3" aria-label="Mobile">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-md px-2 py-2 text-sm font-medium text-foreground hover:bg-muted"
+                onClick={() => setOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <Link
+              href="#contatti"
+              onClick={() => setOpen(false)}
+              className={cn(buttonVariants(), "mt-2 w-full")}
+            >
+              Prenota una lezione
+            </Link>
+          </nav>
+        </div>
+      ) : null}
+    </header>
+  );
+}
