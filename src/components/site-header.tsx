@@ -47,7 +47,7 @@ export function SiteHeader() {
             Instagram
           </Link>
           <Link
-            href="#contatti"
+            href="/#contatti"
             className={cn(
               buttonVariants({ size: "sm", variant: "outline" }),
               "border-primary/25 bg-primary/15 text-foreground hover:bg-primary/25",
@@ -84,7 +84,7 @@ export function SiteHeader() {
               </Link>
             ))}
             <Link
-              href="#contatti"
+              href="/#contatti"
               onClick={() => setOpen(false)}
               className={cn(
                 buttonVariants({ variant: "outline" }),

@@ -9,12 +9,10 @@ import { SiteHeader } from "@/components/site-header";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import {
-  aboutParagraphs,
   ageGroups,
   hero,
   methodSteps,
   offerings,
-  philosophyQuote,
   pillars,
   site,
   stats,
@@ -251,32 +249,30 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="chi-sono" className="scroll-mt-24 border-t border-border/60 py-16 sm:py-20">
-          <div className="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-center">
-            <div className="relative min-h-[20rem] overflow-hidden rounded-2xl border border-border/70 shadow-md">
-              <Image
-                src="/irina-piano-2.jpg"
-                alt="Lezioni di pianoforte con Irina"
-                fill
-                className="photo-vibrant object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+        <section className="border-y border-border/60 bg-muted/20 py-14 sm:py-16">
+          <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 sm:px-6 md:flex-row md:items-center">
+            <div className="max-w-xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                Chi sono
+              </p>
+              <h2 className="mt-3 font-heading text-3xl text-foreground sm:text-4xl">
+                A 52 anni si può ancora mettere in gioco?
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                Ho rimetto in gioco i miei sogni a 47 anni. Leggi come sono arrivata
+                all’insegnamento del pianoforte e perché posso essere un sostegno anche
+                per chi inizia da grande.
+              </p>
             </div>
-            <div>
-              <SectionHeading eyebrow="Chi sono" title={site.name} />
-              <div className="mt-6 space-y-4 text-muted-foreground">
-                {aboutParagraphs.map((paragraph) => (
-                  <p key={paragraph.slice(0, 24)} className="leading-relaxed">
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-              <blockquote className="mt-8 rounded-2xl border border-border/80 bg-muted/30 p-6">
-                <p className="font-heading text-xl leading-snug text-foreground">
-                  &ldquo;{philosophyQuote}&rdquo;
-                </p>
-              </blockquote>
-            </div>
+            <Link
+              href="/chi-sono"
+              className={cn(
+                buttonVariants({ size: "lg", variant: "outline" }),
+                "border-primary/20 bg-white/80 text-foreground hover:bg-muted shrink-0",
+              )}
+            >
+              La mia storia
+            </Link>
           </div>
         </section>
 

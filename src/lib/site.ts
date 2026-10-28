@@ -24,10 +24,10 @@ export const site = {
 } as const;
 
 export const navItems = [
-  { href: "#offerta", label: "Offerta" },
-  { href: "#percorsi", label: "Percorsi" },
-  { href: "#chi-sono", label: "Chi sono" },
-  { href: "#contatti", label: "Contatti" },
+  { href: "/#offerta", label: "Offerta" },
+  { href: "/#percorsi", label: "Percorsi" },
+  { href: "/chi-sono", label: "Chi sono" },
+  { href: "/#contatti", label: "Contatti" },
 ] as const;
 
 export const hero = {
@@ -44,7 +44,7 @@ export const pillars = [
     text:
       "Una ricca combinazione di scuole pianistiche che permette un metodo solido, flessibile e adattato a ogni stile di apprendimento.",
     cta: "Chi sono",
-    href: "#chi-sono",
+    href: "/chi-sono",
   },
   {
     title: "Metodo su misura",
@@ -132,11 +132,24 @@ export const methodSteps = [
   },
 ] as const;
 
-export const aboutParagraphs = [
-  "Mi chiamo Irina e sono un’insegnante di pianoforte laureata in tre paesi diversi: Russia, Italia e Svizzera. Questa combinazione di scuole pianistiche mi permette di offrire un insegnamento solido, con un metodo di studio personalizzato per ogni allievo.",
-  "Offro lezioni per tutte le età e livelli. Per i più piccoli propongo un percorso ludico; per gli adulti un approccio pensato per chi desidera iniziare anche da grande.",
-  "Le lezioni si svolgono in italiano, russo o tedesco, a domicilio, presso la mia sede a Robasacco o online. Provate a realizzare i vostri sogni musicali: contattatemi per informazioni o per prenotare la vostra lezione.",
-] as const;
+export const aboutStory = {
+  headline: "A 52 anni si può ancora mettere in gioco?",
+  subheadline: "Io ce l’ho fatta e ti racconto la mia storia.",
+  photo: "/irina-chi-sono.webp",
+  photoAlt:
+    "Irina, insegnante di pianoforte, seduta davanti a un pianoforte Yamaha con materiali didattici e luce naturale.",
+  paragraphs: [
+    "Mi chiamo Irina, sono un’insegnante di pianoforte e direttrice di coro. Ma non è sempre stato così.",
+    "Ho iniziato i miei studi in Russia, specializzandomi in direzione di coro. Non ho potuto studiare pianoforte. E quando poi l’Unione Sovietica è crollata e il Muro di Berlino è caduto, mi sono trasferita in Europa, come tanti altri in quel periodo.",
+    "Per molti anni ho lavorato nel settore della ristorazione. Ma il mio sogno non si è mai spento.",
+    "A 47 anni ho preso una decisione importante: rimettermi in gioco e tornare a studiare. È stato un percorso impegnativo, ma la musica è la mia vita. È stata una scelta fatta con tutto il cuore.",
+    "Sono riuscita a entrare in conservatorio nella facoltà di pianoforte e in tre anni ho ottenuto la laurea triennale. Ma il mio desiderio profondo era insegnare, così in Svizzera ho conseguito un ulteriore diploma: il Master in Pedagogia Musicale con la maestra Nora Doallo.",
+    "È stato difficile e la paura era tanta. Come ce l’ho fatta io, potete farcela anche voi. Anche imparare da zero.",
+    "Conosco da vicino le difficoltà che si incontrano quando si studia da grandi e so esattamente come superarle. Io sono un esempio di come il mio metodo e costanza possano aiutarti. E posso essere per te un sostegno come ho avuto io.",
+  ],
+  closingQuestion: "Vuoi scoprirlo?",
+  closingCta: "Seguimi e ti mostro il mio lavoro.",
+} as const;
 
 export const philosophyQuote =
   "La musica ci trasforma, ci rende più sensibili e ci regala qualcosa di prezioso e unico.";

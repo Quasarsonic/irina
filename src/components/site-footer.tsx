@@ -19,17 +19,17 @@ export function SiteFooter() {
           </p>
           <ul className="mt-3 space-y-2 text-sm text-foreground/90">
             <li>
-              <Link href="#offerta" className="hover:text-foreground/70">
+              <Link href="/#offerta" className="hover:text-foreground/70">
                 Offerta
               </Link>
             </li>
             <li>
-              <Link href="#chi-sono" className="hover:text-foreground/70">
+              <Link href="/chi-sono" className="hover:text-foreground/70">
                 Chi sono
               </Link>
             </li>
             <li>
-              <Link href="#contatti" className="hover:text-foreground/70">
+              <Link href="/#contatti" className="hover:text-foreground/70">
                 Contatti
               </Link>
             </li>
