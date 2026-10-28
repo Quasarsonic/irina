@@ -30,17 +30,17 @@ export default function HomePage() {
             src={site.heroBackground}
             alt=""
             fill
-            className="object-cover object-center"
+            className="object-cover object-center photo-vibrant"
             sizes="100vw"
             priority
             aria-hidden
           />
           <div
-            className="absolute inset-0 bg-gradient-to-r from-[#8f2d52]/92 via-[#e5467e]/75 to-[#e5467e]/45"
+            className="absolute inset-0 bg-gradient-to-r from-[#c96a94]/75 via-[#f7cbe6]/55 to-[#f7cbe6]/25"
             aria-hidden
           />
           <div
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,transparent_0%,#8f2d52/35_70%)]"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,transparent_0%,#e991b8/25_70%)]"
             aria-hidden
           />
           <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 sm:px-6 lg:min-h-[88vh] lg:grid-cols-[1fr_minmax(16rem,22rem)] lg:gap-12 lg:py-28">
@@ -55,7 +55,7 @@ export default function HomePage() {
                 {hero.subtitle}
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <span className="rounded-full bg-white/95 px-4 py-1.5 text-sm font-semibold text-[#8f2d52]">
+                <span className="rounded-full bg-white/95 px-4 py-1.5 text-sm font-semibold text-primary">
                   {site.trialLesson}
                 </span>
                 <span className="rounded-full border border-white/40 bg-white/15 px-4 py-1.5 text-sm font-semibold text-white backdrop-blur-sm">
@@ -67,7 +67,7 @@ export default function HomePage() {
                   href="#contatti"
                   className={cn(
                     buttonVariants({ size: "lg" }),
-                    "bg-white text-[#8f2d52] hover:bg-white/90",
+                    "bg-white text-primary hover:bg-white/90",
                   )}
                 >
                   Prenota la lezione
@@ -93,7 +93,7 @@ export default function HomePage() {
                   src={site.heroPortrait}
                   alt={`${site.name} davanti al pianoforte`}
                   fill
-                  className="object-cover object-top"
+                  className="photo-vibrant object-cover object-top"
                   sizes="(max-width: 1024px) 17rem, 22rem"
                   priority
                 />
@@ -258,7 +258,7 @@ export default function HomePage() {
                 src="/irina-piano-2.jpg"
                 alt="Lezioni di pianoforte con Irina"
                 fill
-                className="object-cover"
+                className="photo-vibrant object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>

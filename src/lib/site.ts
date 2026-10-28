@@ -69,24 +69,24 @@ export const ageGroups = [
     title: "Bambini",
     text:
       "Lezioni in forma ludica: imparare la musica giocando, con ritmo, ascolto e il piacere di scoprire il pianoforte.",
-    tone: "from-[#f7c4d4] to-[#e5467e]",
+    tone: "from-[#fce8f4] to-[#f7cbe6]",
   },
   {
     title: "Ragazzi e adulti",
     text:
       "Percorsi per tutte le età e livelli, con obiettivi chiari e un approccio specifico per chi desidera iniziare anche da grande.",
-    tone: "from-[#e5467e] to-[#c93d6d]",
+    tone: "from-[#f7cbe6] to-[#e991b8]",
   },
   {
     title: "A domicilio",
     text: "Lezioni nel comfort di casa vostra, ideali per famiglie e per chi preferisce un ambiente familiare.",
-    tone: "from-[#c93d6d] to-[#8f2d52]",
+    tone: "from-[#e991b8] to-[#db6a96]",
   },
   {
     title: "Online",
     text:
       "Lezioni a distanza con la stessa attenzione: comode se abitate lontano o avete orari impegnativi.",
-    tone: "from-[#e5467e]/90 to-[#8f2d52]",
+    tone: "from-[#f7cbe6] to-[#c96a94]",
   },
 ] as const;
 
