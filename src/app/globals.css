@@ -142,10 +142,10 @@
     font-family: var(--font-heading), var(--font-sans), ui-serif, Georgia, serif;
   }
   .photo-vibrant {
-    filter: brightness(1.07) contrast(1.14) saturate(1.38) hue-rotate(6deg);
+    filter: brightness(1.08) contrast(1.16) saturate(1.48) hue-rotate(6deg);
   }
 
   .photo-vibrant-portrait {
-    filter: brightness(1.06) contrast(1.12) saturate(1.28) hue-rotate(5deg);
+    filter: brightness(1.07) contrast(1.14) saturate(1.38) hue-rotate(5deg);
   }
 }
