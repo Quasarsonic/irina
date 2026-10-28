@@ -36,29 +36,29 @@ export default function HomePage() {
             aria-hidden
           />
           <div
-            className="absolute inset-0 bg-gradient-to-r from-[#c96a94]/75 via-[#f7cbe6]/55 to-[#f7cbe6]/25"
+            className="absolute inset-0 bg-gradient-to-r from-[#f7cbe6]/85 via-[#fce8f4]/50 to-[#fef8fc]/20"
             aria-hidden
           />
           <div
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,transparent_0%,#e991b8/25_70%)]"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,transparent_0%,#f7cbe6/20_70%)]"
             aria-hidden
           />
           <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 sm:px-6 lg:min-h-[88vh] lg:grid-cols-[1fr_minmax(16rem,22rem)] lg:gap-12 lg:py-28">
-            <div className="max-w-2xl text-white">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/85">
+            <div className="max-w-2xl text-foreground">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                 {hero.eyebrow}
               </p>
               <h1 className="mt-4 font-heading text-4xl leading-[1.05] sm:text-5xl lg:text-6xl">
                 {hero.title}
               </h1>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/90">
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
                 {hero.subtitle}
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <span className="rounded-full bg-white/95 px-4 py-1.5 text-sm font-semibold text-primary">
+                <span className="rounded-full border border-border bg-white/90 px-4 py-1.5 text-sm font-semibold text-foreground">
                   {site.trialLesson}
                 </span>
-                <span className="rounded-full border border-white/40 bg-white/15 px-4 py-1.5 text-sm font-semibold text-white backdrop-blur-sm">
+                <span className="rounded-full border border-border bg-muted/80 px-4 py-1.5 text-sm font-semibold text-foreground">
                   Da {site.priceFrom}
                 </span>
               </div>
@@ -67,7 +67,7 @@ export default function HomePage() {
                   href="#contatti"
                   className={cn(
                     buttonVariants({ size: "lg" }),
-                    "bg-white text-primary hover:bg-white/90",
+                    "border border-primary/20 bg-primary/15 text-foreground hover:bg-primary/25",
                   )}
                 >
                   Prenota la lezione
@@ -76,13 +76,13 @@ export default function HomePage() {
                   href="#offerta"
                   className={cn(
                     buttonVariants({ variant: "outline", size: "lg" }),
-                    "border-white/50 bg-transparent text-white hover:bg-white/15 hover:text-white",
+                    "border-primary/20 bg-white/80 text-foreground hover:bg-muted",
                   )}
                 >
                   Vedi l&apos;offerta
                 </Link>
               </div>
-              <p className="mt-10 text-sm font-medium uppercase tracking-widest text-white/80">
+              <p className="mt-10 text-sm font-medium uppercase tracking-widest text-muted-foreground">
                 {site.location}
               </p>
             </div>
@@ -126,7 +126,7 @@ export default function HomePage() {
                     <p className="text-sm leading-relaxed text-muted-foreground">{pillar.text}</p>
                     <Link
                       href={pillar.href}
-                      className="text-sm font-semibold text-primary hover:text-primary/80"
+                      className="text-sm font-semibold text-foreground/80 hover:text-foreground"
                     >
                       {pillar.cta} →
                     </Link>
@@ -149,7 +149,7 @@ export default function HomePage() {
             />
             <Card className="border-primary/20 shadow-md">
               <CardHeader>
-                <CardTitle className="font-heading text-3xl font-normal text-primary">
+                <CardTitle className="font-heading text-3xl font-normal text-foreground">
                   Da {site.priceFrom}
                 </CardTitle>
                 <p className="text-sm text-muted-foreground">{site.priceNote}</p>
@@ -165,7 +165,7 @@ export default function HomePage() {
                   href={site.tuttiListing}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-sm font-semibold text-primary hover:underline"
+                  className="inline-block text-sm font-semibold text-foreground/80 hover:text-foreground hover:underline"
                 >
                   Vedi l&apos;annuncio su tutti.ch →
                 </Link>
@@ -189,7 +189,7 @@ export default function HomePage() {
                 >
                   <div
                     className={cn(
-                      "flex h-36 items-end bg-gradient-to-br p-5 text-white",
+                      "flex h-36 items-end bg-gradient-to-br p-5 text-foreground",
                       group.tone,
                     )}
                   >
@@ -205,7 +205,7 @@ export default function HomePage() {
               {offerings.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-primary/25 bg-primary/5 px-4 py-1.5 text-sm font-medium text-foreground"
+                  className="rounded-full border border-border bg-muted/40 px-4 py-1.5 text-sm font-medium text-foreground"
                 >
                   {item}
                 </span>
@@ -218,7 +218,7 @@ export default function HomePage() {
           <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-4 sm:px-6 lg:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="font-heading text-4xl text-primary sm:text-5xl">{stat.value}</p>
+                <p className="font-heading text-4xl text-foreground sm:text-5xl">{stat.value}</p>
                 <p className="mt-2 text-sm font-medium uppercase tracking-wide text-muted-foreground">
                   {stat.label}
                 </p>
@@ -240,7 +240,7 @@ export default function HomePage() {
                   key={step.step}
                   className="rounded-2xl border border-border/70 bg-card p-6 shadow-sm"
                 >
-                  <span className="text-sm font-semibold text-primary">{step.step}</span>
+                  <span className="text-sm font-semibold text-muted-foreground">{step.step}</span>
                   <h3 className="mt-2 font-heading text-xl">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                     {step.text}
@@ -271,7 +271,7 @@ export default function HomePage() {
                   </p>
                 ))}
               </div>
-              <blockquote className="mt-8 rounded-2xl border border-primary/20 bg-primary/5 p-6">
+              <blockquote className="mt-8 rounded-2xl border border-border/80 bg-muted/30 p-6">
                 <p className="font-heading text-xl leading-snug text-foreground">
                   &ldquo;{philosophyQuote}&rdquo;
                 </p>
@@ -280,13 +280,13 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="bg-primary py-14 text-primary-foreground">
+        <section className="border-y border-border/60 bg-muted/35 py-14 text-foreground">
           <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 sm:px-6 md:flex-row md:items-center">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-white/85">
+              <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
                 {site.trialLesson}
               </p>
-              <h2 className="mt-2 font-heading text-3xl sm:text-4xl">
+              <h2 className="mt-2 font-heading text-3xl text-foreground sm:text-4xl">
                 Contattatemi per prenotare la vostra lezione.
               </h2>
             </div>
@@ -294,7 +294,7 @@ export default function HomePage() {
               href="#contatti"
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "bg-white text-primary hover:bg-white/90",
+                "border border-primary/20 bg-primary/15 text-foreground hover:bg-primary/25",
               )}
             >
               Scrivimi

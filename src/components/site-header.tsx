@@ -49,8 +49,8 @@ export function SiteHeader() {
           <Link
             href="#contatti"
             className={cn(
-              buttonVariants({ size: "sm" }),
-              "bg-primary text-primary-foreground hover:bg-primary/90",
+              buttonVariants({ size: "sm", variant: "outline" }),
+              "border-primary/25 bg-primary/15 text-foreground hover:bg-primary/25",
             )}
           >
             Iscrizioni
@@ -87,8 +87,8 @@ export function SiteHeader() {
               href="#contatti"
               onClick={() => setOpen(false)}
               className={cn(
-                buttonVariants(),
-                "mt-2 w-full bg-primary text-primary-foreground hover:bg-primary/90",
+                buttonVariants({ variant: "outline" }),
+                "mt-2 w-full border-primary/25 bg-primary/15 text-foreground hover:bg-primary/25",
               )}
             >
               Iscrizioni
