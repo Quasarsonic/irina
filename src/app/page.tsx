@@ -25,27 +25,40 @@ export default function HomePage() {
     <>
       <SiteHeader />
       <main>
-        <section className="relative overflow-hidden bg-[linear-gradient(165deg,oklch(0.97_0.03_175)_0%,oklch(0.99_0.01_95)_45%,oklch(0.98_0.02_200)_100%)]">
-          <div
-            className="pointer-events-none absolute -right-24 top-0 h-96 w-96 rounded-full bg-accent/25 blur-3xl"
+        <section className="relative min-h-[88vh] overflow-hidden">
+          <Image
+            src={site.heroBackground}
+            alt=""
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+            priority
             aria-hidden
           />
-          <div className="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:py-24">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-secondary">
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-[#8f2d52]/92 via-[#e5467e]/75 to-[#e5467e]/45"
+            aria-hidden
+          />
+          <div
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,transparent_0%,#8f2d52/35_70%)]"
+            aria-hidden
+          />
+          <div className="relative z-10 mx-auto flex max-w-6xl flex-col justify-center px-4 py-20 sm:px-6 lg:min-h-[88vh] lg:py-28">
+            <div className="max-w-2xl text-white">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/85">
                 {hero.eyebrow}
               </p>
-              <h1 className="mt-4 font-heading text-4xl leading-[1.05] text-foreground sm:text-5xl lg:text-6xl">
+              <h1 className="mt-4 font-heading text-4xl leading-[1.05] sm:text-5xl lg:text-6xl">
                 {hero.title}
               </h1>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/90">
                 {hero.subtitle}
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <span className="rounded-full bg-accent px-4 py-1.5 text-sm font-semibold text-accent-foreground">
+                <span className="rounded-full bg-white/95 px-4 py-1.5 text-sm font-semibold text-[#8f2d52]">
                   {site.trialLesson}
                 </span>
-                <span className="rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
+                <span className="rounded-full border border-white/40 bg-white/15 px-4 py-1.5 text-sm font-semibold text-white backdrop-blur-sm">
                   Da {site.priceFrom}
                 </span>
               </div>
@@ -54,37 +67,24 @@ export default function HomePage() {
                   href="#contatti"
                   className={cn(
                     buttonVariants({ size: "lg" }),
-                    "bg-accent text-accent-foreground hover:bg-accent/90",
+                    "bg-white text-[#8f2d52] hover:bg-white/90",
                   )}
                 >
                   Prenota la lezione
                 </Link>
                 <Link
                   href="#offerta"
-                  className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
+                  className={cn(
+                    buttonVariants({ variant: "outline", size: "lg" }),
+                    "border-white/50 bg-transparent text-white hover:bg-white/15 hover:text-white",
+                  )}
                 >
                   Vedi l&apos;offerta
                 </Link>
               </div>
-            </div>
-            <div className="relative min-h-[22rem] overflow-hidden rounded-2xl border border-primary/15 shadow-xl">
-              <Image
-                src="/irina-piano-1.jpg"
-                alt="Irina Tchermianina, insegnante di pianoforte"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
-              <div className="absolute bottom-0 p-6 text-white sm:p-8">
-                <p className="text-sm font-medium uppercase tracking-widest text-white/85">
-                  {site.location}
-                </p>
-                <p className="mt-2 max-w-sm font-heading text-2xl leading-snug">
-                  Provate a realizzare i vostri sogni musicali.
-                </p>
-              </div>
+              <p className="mt-10 text-sm font-medium uppercase tracking-widest text-white/80">
+                {site.location}
+              </p>
             </div>
           </div>
         </section>
@@ -227,7 +227,7 @@ export default function HomePage() {
                   key={step.step}
                   className="rounded-2xl border border-border/70 bg-card p-6 shadow-sm"
                 >
-                  <span className="text-sm font-semibold text-accent">{step.step}</span>
+                  <span className="text-sm font-semibold text-primary">{step.step}</span>
                   <h3 className="mt-2 font-heading text-xl">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                     {step.text}
@@ -267,7 +267,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="bg-accent py-14 text-accent-foreground">
+        <section className="bg-primary py-14 text-primary-foreground">
           <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 sm:px-6 md:flex-row md:items-center">
             <div>
               <p className="text-sm font-semibold uppercase tracking-widest text-white/85">
@@ -281,7 +281,7 @@ export default function HomePage() {
               href="#contatti"
               className={cn(
                 buttonVariants({ size: "lg" }),
-                "bg-white text-accent hover:bg-white/90",
+                "bg-white text-primary hover:bg-white/90",
               )}
             >
               Scrivimi

@@ -11,7 +11,7 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/50 bg-background/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-primary/15 bg-[#fff5f8]/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link href="/" className="group flex flex-col leading-tight">
           <span className="font-heading text-xl tracking-tight text-foreground">
@@ -50,7 +50,7 @@ export function SiteHeader() {
             href="#contatti"
             className={cn(
               buttonVariants({ size: "sm" }),
-              "bg-accent text-accent-foreground hover:bg-accent/90",
+              "bg-primary text-primary-foreground hover:bg-primary/90",
             )}
           >
             Iscrizioni
@@ -88,7 +88,7 @@ export function SiteHeader() {
               onClick={() => setOpen(false)}
               className={cn(
                 buttonVariants(),
-                "mt-2 w-full bg-accent text-accent-foreground hover:bg-accent/90",
+                "mt-2 w-full bg-primary text-primary-foreground hover:bg-primary/90",
               )}
             >
               Iscrizioni

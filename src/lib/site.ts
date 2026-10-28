@@ -19,6 +19,7 @@ export const site = {
     "https://www.tutti.ch/it/vi/ticino/musica/strumenti/lezioni-di-pianoforte/82716917",
   languages: ["Italiano", "Russo", "Tedesco"] as const,
   lessonModes: ["A domicilio", "Presso la mia sede", "Online"] as const,
+  heroBackground: "/irina-piano-2.jpg",
 } as const;
 
 export const navItems = [
@@ -67,24 +68,24 @@ export const ageGroups = [
     title: "Bambini",
     text:
       "Lezioni in forma ludica: imparare la musica giocando, con ritmo, ascolto e il piacere di scoprire il pianoforte.",
-    tone: "from-teal-500/80 to-teal-700/90",
+    tone: "from-[#f7c4d4] to-[#e5467e]",
   },
   {
     title: "Ragazzi e adulti",
     text:
       "Percorsi per tutte le età e livelli, con obiettivi chiari e un approccio specifico per chi desidera iniziare anche da grande.",
-    tone: "from-cyan-600/75 to-teal-800/90",
+    tone: "from-[#e5467e] to-[#c93d6d]",
   },
   {
     title: "A domicilio",
     text: "Lezioni nel comfort di casa vostra, ideali per famiglie e per chi preferisce un ambiente familiare.",
-    tone: "from-emerald-600/70 to-teal-900/90",
+    tone: "from-[#c93d6d] to-[#8f2d52]",
   },
   {
     title: "Online",
     text:
       "Lezioni a distanza con la stessa attenzione: comode se abitate lontano o avete orari impegnativi.",
-    tone: "from-sky-600/75 to-teal-800/90",
+    tone: "from-[#e5467e]/90 to-[#8f2d52]",
   },
 ] as const;
 
