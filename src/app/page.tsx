@@ -30,17 +30,17 @@ export default function HomePage() {
             src={site.heroBackground}
             alt=""
             fill
-            className="object-cover object-center photo-vibrant"
+            className="object-cover object-center photo-vibrant scale-[1.02]"
             sizes="100vw"
             priority
             aria-hidden
           />
           <div
-            className="absolute inset-0 bg-gradient-to-r from-[#f7cbe6]/85 via-[#fce8f4]/50 to-[#fef8fc]/20"
+            className="absolute inset-0 bg-gradient-to-r from-[#f7cbe6]/52 via-[#fce8f4]/32 to-[#fef8fc]/12"
             aria-hidden
           />
           <div
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,transparent_0%,#f7cbe6/20_70%)]"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,transparent_0%,#f7cbe6/12_70%)]"
             aria-hidden
           />
           <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 sm:px-6 lg:min-h-[88vh] lg:grid-cols-[1fr_minmax(16rem,22rem)] lg:gap-12 lg:py-28">
@@ -93,7 +93,7 @@ export default function HomePage() {
                   src={site.heroPortrait}
                   alt={`${site.name} davanti al pianoforte`}
                   fill
-                  className="photo-vibrant object-cover object-top"
+                  className="photo-vibrant-portrait object-cover object-[center_12%]"
                   sizes="(max-width: 1024px) 17rem, 22rem"
                   priority
                 />
@@ -120,7 +120,7 @@ export default function HomePage() {
                     <CardTitle className="font-heading text-2xl font-normal">
                       {pillar.title}
                     </CardTitle>
-                    <p className="text-sm font-semibold text-secondary">{pillar.lead}</p>
+                    <p className="text-sm font-semibold text-muted-foreground">{pillar.lead}</p>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <p className="text-sm leading-relaxed text-muted-foreground">{pillar.text}</p>
@@ -258,7 +258,7 @@ export default function HomePage() {
                 src="/irina-piano-2.jpg"
                 alt="Lezioni di pianoforte con Irina"
                 fill
-                className="photo-vibrant object-cover"
+                className="photo-vibrant object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
