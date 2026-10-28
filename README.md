@@ -24,21 +24,17 @@ Modifica email, telefono e testi in `src/lib/site.ts`.
 
 ## GitHub
 
-Crea un repository GitHub chiamato `irina` e collega questo progetto:
-
-```bash
-git remote add github git@github.com:TUO_UTENTE/irina.git
-git push -u github main
-```
+Repository: [Quasarsonic/irina](https://github.com/Quasarsonic/irina)
 
 ## Deploy su Vercel
 
-1. Importa il repository `irina` su [vercel.com/new](https://vercel.com/new).
-2. Framework: **Next.js** (rilevato automaticamente).
-3. Esegui il deploy — non servono variabili d'ambiente per questa versione.
+**Produzione:** [irina-navy.vercel.app](https://irina-navy.vercel.app)
 
-Da CLI (dopo `npx vercel login`):
+Il progetto è collegato a GitHub; ogni push su `main` avvia un nuovo deploy. Non servono variabili d'ambiente per questa versione.
+
+Setup iniziale su [vercel.com/new](https://vercel.com/new) (framework **Next.js**). Da CLI:
 
 ```bash
+npx vercel login
 npx vercel --prod
 ```
