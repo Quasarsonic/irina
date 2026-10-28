@@ -20,6 +20,7 @@ export const site = {
   languages: ["Italiano", "Russo", "Tedesco"] as const,
   lessonModes: ["A domicilio", "Presso la mia sede", "Online"] as const,
   heroBackground: "/irina-piano-2.jpg",
+  heroPortrait: "/irina-hero-portrait.jpg",
 } as const;
 
 export const navItems = [

@@ -43,7 +43,7 @@ export default function HomePage() {
             className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,transparent_0%,#8f2d52/35_70%)]"
             aria-hidden
           />
-          <div className="relative z-10 mx-auto flex max-w-6xl flex-col justify-center px-4 py-20 sm:px-6 lg:min-h-[88vh] lg:py-28">
+          <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 sm:px-6 lg:min-h-[88vh] lg:grid-cols-[1fr_minmax(16rem,22rem)] lg:gap-12 lg:py-28">
             <div className="max-w-2xl text-white">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/85">
                 {hero.eyebrow}
@@ -86,6 +86,19 @@ export default function HomePage() {
                 {site.location}
               </p>
             </div>
+
+            <figure className="mx-auto w-full max-w-[17rem] lg:max-w-none lg:justify-self-end">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border-2 border-white/35 shadow-[0_20px_50px_-12px_rgba(74,31,48,0.55)] ring-4 ring-white/10">
+                <Image
+                  src={site.heroPortrait}
+                  alt={`${site.name} davanti al pianoforte`}
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 17rem, 22rem"
+                  priority
+                />
+              </div>
+            </figure>
           </div>
         </section>
 
