@@ -21,6 +21,7 @@ export const site = {
   lessonModes: ["A domicilio", "Presso la mia sede", "Online"] as const,
   heroBackground: "/irina-piano-2.jpg",
   heroPortrait: "/irina-hero-portrait.jpg",
+  logo: "/logo.jpg",
 } as const;
 
 export const navItems = [

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SiteLogo } from "@/components/site-logo";
 import { site } from "@/lib/site";
 
 export function SiteFooter() {
@@ -8,8 +9,8 @@ export function SiteFooter() {
     <footer className="border-t border-border/80 bg-muted/25 text-foreground">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3">
         <div>
-          <p className="font-heading text-2xl text-foreground">{site.shortName}</p>
-          <p className="mt-2 text-sm text-muted-foreground">
+          <SiteLogo sizes="112px" className="h-28 w-28" />
+          <p className="mt-4 text-sm text-muted-foreground">
             Lezioni di pianoforte a {site.location}. {site.trialLesson}, da {site.priceFrom}.
           </p>
         </div>
