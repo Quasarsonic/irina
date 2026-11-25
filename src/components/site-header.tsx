@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { SiteLogo } from "@/components/site-logo";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { navItems, site } from "@/lib/site";
@@ -12,15 +13,12 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-primary/10 bg-background/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-        <Link href="/" className="group flex flex-col leading-tight">
-          <span className="font-heading text-xl tracking-tight text-foreground">
-            {site.shortName}
-          </span>
-          <span className="text-[0.65rem] font-medium uppercase tracking-[0.18em] text-muted-foreground">
-            {site.tagline}
-          </span>
-        </Link>
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2.5 sm:px-6">
+        <SiteLogo
+          priority
+          sizes="(min-width: 640px) 80px, 64px"
+          className="h-16 w-16 sm:h-20 sm:w-20"
+        />
 
         <nav
           className="hidden items-center gap-6 md:flex"
